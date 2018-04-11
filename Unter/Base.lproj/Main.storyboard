@@ -74,32 +74,54 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-Na-GFc">
-                                <rect key="frame" x="297" y="350" width="48" height="30"/>
-                                <state key="normal" title="Signup"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIy-Sy-LkW">
-                                <rect key="frame" x="30" y="350" width="153" height="30"/>
-                                <state key="normal" title="Forgotten Passoword?"/>
+                                <rect key="frame" x="200" y="398" width="145" height="30"/>
+                                <state key="normal" title="Forgotten Password?"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfx-5r-1yh">
+                                <rect key="frame" x="30" y="350" width="315" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cx0-TA-44q"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Don't Have An Account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Td-ie-ZZg">
+                                <rect key="frame" x="63" y="611" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-Na-GFc">
+                                <rect key="frame" x="256" y="606" width="56" height="30"/>
+                                <state key="normal" title="Sign Up"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Mh4-v6-XsD" firstAttribute="bottom" secondItem="RIy-Sy-LkW" secondAttribute="bottom" constant="287" id="1kf-ar-4V5"/>
-                            <constraint firstItem="RIy-Sy-LkW" firstAttribute="leading" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="30" id="2gc-uD-F7z"/>
+                            <constraint firstItem="0Td-ie-ZZg" firstAttribute="leading" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="63" id="1W7-fp-n9c"/>
+                            <constraint firstItem="RIy-Sy-LkW" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="250" id="2gc-uD-F7z"/>
                             <constraint firstItem="mLN-Sg-jop" firstAttribute="leading" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="30" id="4qi-ha-G1T"/>
+                            <constraint firstItem="0Td-ie-ZZg" firstAttribute="top" secondItem="RIy-Sy-LkW" secondAttribute="bottom" constant="183" id="5Pi-YA-iPh"/>
                             <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="mLN-Sg-jop" secondAttribute="trailing" constant="30" id="5dd-3a-dms"/>
                             <constraint firstItem="mLN-Sg-jop" firstAttribute="top" secondItem="Uhc-tO-4d9" secondAttribute="bottom" constant="8" symbolic="YES" id="DS6-bt-qIa"/>
+                            <constraint firstItem="tfx-5r-1yh" firstAttribute="top" secondItem="mLN-Sg-jop" secondAttribute="bottom" constant="8" symbolic="YES" id="GbV-yH-HnI"/>
                             <constraint firstItem="3yP-v9-FVS" firstAttribute="centerX" secondItem="Mh4-v6-XsD" secondAttribute="centerX" id="IQq-Ju-wz6"/>
+                            <constraint firstItem="wbK-Na-GFc" firstAttribute="leading" secondItem="0Td-ie-ZZg" secondAttribute="trailing" constant="8" symbolic="YES" id="X5s-U7-nLn"/>
+                            <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="wbK-Na-GFc" secondAttribute="trailing" constant="63" id="aRd-8k-zdp"/>
                             <constraint firstItem="Uhc-tO-4d9" firstAttribute="top" relation="lessThanOrEqual" secondItem="3yP-v9-FVS" secondAttribute="bottom" constant="124" id="bpw-cF-mkd"/>
                             <constraint firstItem="Mh4-v6-XsD" firstAttribute="bottom" secondItem="mLN-Sg-jop" secondAttribute="bottom" constant="325" id="dNh-X5-esH"/>
                             <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="Uhc-tO-4d9" secondAttribute="trailing" constant="30" id="fQd-P1-TSQ"/>
                             <constraint firstItem="3yP-v9-FVS" firstAttribute="top" secondItem="Mh4-v6-XsD" secondAttribute="top" constant="99" id="ihf-6p-kzZ"/>
-                            <constraint firstItem="wbK-Na-GFc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="250" id="lrG-1j-MMy"/>
-                            <constraint firstItem="wbK-Na-GFc" firstAttribute="top" secondItem="mLN-Sg-jop" secondAttribute="bottom" constant="8" symbolic="YES" id="mOh-Ve-ZLh"/>
-                            <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="wbK-Na-GFc" secondAttribute="trailing" constant="30" id="tqQ-LT-FCh"/>
+                            <constraint firstItem="wbK-Na-GFc" firstAttribute="top" secondItem="RIy-Sy-LkW" secondAttribute="bottom" constant="178" id="jdX-F4-0Ek"/>
+                            <constraint firstItem="RIy-Sy-LkW" firstAttribute="top" secondItem="tfx-5r-1yh" secondAttribute="bottom" constant="8" symbolic="YES" id="mEG-e9-7b4"/>
+                            <constraint firstItem="Mh4-v6-XsD" firstAttribute="bottom" secondItem="wbK-Na-GFc" secondAttribute="bottom" constant="31" id="qK3-1W-nV1"/>
+                            <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="RIy-Sy-LkW" secondAttribute="trailing" constant="30" id="qQn-ww-tpa"/>
+                            <constraint firstItem="tfx-5r-1yh" firstAttribute="leading" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="30" id="suZ-N6-u2z"/>
                             <constraint firstItem="Uhc-tO-4d9" firstAttribute="leading" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="30" id="uqo-18-xlu"/>
-                            <constraint firstItem="RIy-Sy-LkW" firstAttribute="top" secondItem="mLN-Sg-jop" secondAttribute="bottom" constant="8" symbolic="YES" id="w0R-fA-JRr"/>
+                            <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="tfx-5r-1yh" secondAttribute="trailing" constant="30" id="vbA-7Y-1J0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mh4-v6-XsD"/>
                     </view>
