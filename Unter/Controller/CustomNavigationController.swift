@@ -14,7 +14,6 @@ class CustomNavigationController: UINavigationController {
         super.viewDidLoad()
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
-        
         // Do any additional setup after loading the view.
     }
 

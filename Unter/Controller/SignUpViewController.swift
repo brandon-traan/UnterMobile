@@ -9,10 +9,25 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    
 
+    @IBOutlet weak var firstnameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
+    
+    @IBOutlet weak var googleDriveButton: UIButton!
+    @IBOutlet weak var iCloudDriveButton: UIButton!
+    @IBOutlet weak var dropboxButton: UIButton!
+    @IBOutlet weak var photoButton: UIButton!
+    @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var attachmentLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -25,6 +40,11 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Button(_ sender: Any) {
+        attachmentLabel.text = "hello"
+    }
+    
+
 
     /*
     // MARK: - Navigation
