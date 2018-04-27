@@ -1,23 +1,21 @@
 //
-//  SignUpViewController.swift
+//  CustomNavigationController.swift
 //  Unter
 //
-//  Created by Brandon Tran on 23/4/18.
+//  Created by Brandon Tran on 27/4/18.
 //  Copyright © 2018 Brandon Tran. All rights reserved.
 //
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class CustomNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationBar.shadowImage = UIImage()
+        
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
     }
 
     override func didReceiveMemoryWarning() {
