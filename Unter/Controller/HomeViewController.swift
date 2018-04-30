@@ -16,6 +16,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameField.setBottomBorder()
+        passwordField.setBottomBorder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
