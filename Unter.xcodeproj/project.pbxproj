@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		072FDF9E2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDF9D2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift */; };
+		072FDFA22097195100D8ED0C /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA12097195100D8ED0C /* BookViewController.swift */; };
+		072FDFA42097196E00D8ED0C /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */; };
+		072FDFA62097198800D8ED0C /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA52097198800D8ED0C /* HistoryTableViewController.swift */; };
 		079E6A2D2096E6E5001897F9 /* SignUpSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E6A2C2096E6E5001897F9 /* SignUpSecondViewController.swift */; };
 		07F7C3A72092F312006001A8 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F7C3A62092F312006001A8 /* CustomNavigationController.swift */; };
 		84047464207E3EE900AF75CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84047463207E3EE900AF75CD /* AppDelegate.swift */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		072FDF9D2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		072FDFA12097195100D8ED0C /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		072FDFA52097198800D8ED0C /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		079E6A2C2096E6E5001897F9 /* SignUpSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSecondViewController.swift; sourceTree = "<group>"; };
 		07F7C3A62092F312006001A8 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		84047460207E3EE900AF75CD /* Unter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +156,9 @@
 				84539DAB208E166400870C3A /* HomeViewController.swift */,
 				07F7C3A62092F312006001A8 /* CustomNavigationController.swift */,
 				072FDF9D2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift */,
+				072FDFA12097195100D8ED0C /* BookViewController.swift */,
+				072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */,
+				072FDFA52097198800D8ED0C /* HistoryTableViewController.swift */,
 				079E6A2C2096E6E5001897F9 /* SignUpSecondViewController.swift */,
 				84539DAD208E189B00870C3A /* SignUpFirstViewController.swift */,
 			);
@@ -290,13 +299,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072FDFA62097198800D8ED0C /* HistoryTableViewController.swift in Sources */,
 				07F7C3A72092F312006001A8 /* CustomNavigationController.swift in Sources */,
 				8404746C207E3EE900AF75CD /* Unter.xcdatamodeld in Sources */,
 				84047464207E3EE900AF75CD /* AppDelegate.swift in Sources */,
 				84539DAC208E166400870C3A /* HomeViewController.swift in Sources */,
 				072FDF9E2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift in Sources */,
 				079E6A2D2096E6E5001897F9 /* SignUpSecondViewController.swift in Sources */,
+				072FDFA22097195100D8ED0C /* BookViewController.swift in Sources */,
 				84539DAE208E189B00870C3A /* SignUpFirstViewController.swift in Sources */,
+				072FDFA42097196E00D8ED0C /* MyAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
