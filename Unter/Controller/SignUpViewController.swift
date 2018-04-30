@@ -140,11 +140,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate,
         }
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
-        attachmentLabel.text = "Photo Attached!"
+        attachmentLabel.text = "Photo Attached"
     }
 
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -152,6 +150,5 @@ class SignUpViewController: UIViewController, UITextFieldDelegate,
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
+    
 }
