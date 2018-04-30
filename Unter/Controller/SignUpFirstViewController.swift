@@ -18,6 +18,8 @@ class SignUpFirstViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
     
+    @IBOutlet weak var passwordBottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,8 +29,11 @@ class SignUpFirstViewController: UIViewController {
         emailTextField.setBottomBorder()
         phoneTextField.setBottomBorder()
         passwordTextField.setBottomBorder()
+        
+
         // Do any additional setup after loading the view.
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
@@ -40,6 +45,7 @@ class SignUpFirstViewController: UIViewController {
     }
     
 
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

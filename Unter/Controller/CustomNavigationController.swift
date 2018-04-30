@@ -14,8 +14,11 @@ class CustomNavigationController: UINavigationController {
         super.viewDidLoad()
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
-    }
+        
 
+    }
+ 
+    
 }
 
 extension UITextField {
@@ -30,6 +33,8 @@ extension UITextField {
         border.borderWidth = width
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
+        self.textColor = UIColor.white
+        self.attributedPlaceholder = NSAttributedString(string: self.placeholder!, attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
     }
 }
 
