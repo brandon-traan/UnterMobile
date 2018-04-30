@@ -69,7 +69,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBAction func choosePhotoOption(_ sender: UIButton)
     {
-        let alert = UIAlertController(title: "Select Image From", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Select Photo From", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler:
             {
