@@ -122,7 +122,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         dismiss(animated: true, completion: nil)
         attachmentLabel.text = "Photo Attached"
         createAccountButton.isEnabled = true
-        createAccountButton.setTitle("Create Account", for: .normal)
+        createAccountButton.setTitle("Create Account", for: .normal )
     }
     
     /*
