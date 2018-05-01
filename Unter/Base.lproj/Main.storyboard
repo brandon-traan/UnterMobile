@@ -204,7 +204,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="oNf-qX-LEq" kind="show" identifier="" id="x9q-yW-C5i"/>
+                                    <segue destination="oNf-qX-LEq" kind="show" identifier="signUpP2" id="x9q-yW-C5i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,6 +252,12 @@
                         <outlet property="lastnameTextField" destination="qzm-3N-a5w" id="4gW-Sa-1Zb"/>
                         <outlet property="passwordTextField" destination="r4v-6d-q5P" id="7h1-cQ-LgR"/>
                         <outlet property="phoneTextField" destination="rKQ-pP-iKc" id="Nmb-3a-xyI"/>
+                        <outletCollection property="textFields" destination="GOY-sa-GUg" collectionClass="NSMutableArray" id="DFE-0v-Esx"/>
+                        <outletCollection property="textFields" destination="qzm-3N-a5w" collectionClass="NSMutableArray" id="QkQ-zR-SRs"/>
+                        <outletCollection property="textFields" destination="hg4-g8-eCH" collectionClass="NSMutableArray" id="KzL-dZ-lcZ"/>
+                        <outletCollection property="textFields" destination="T3g-uJ-1QH" collectionClass="NSMutableArray" id="zds-cT-h7N"/>
+                        <outletCollection property="textFields" destination="rKQ-pP-iKc" collectionClass="NSMutableArray" id="dKs-7U-PEf"/>
+                        <outletCollection property="textFields" destination="r4v-6d-q5P" collectionClass="NSMutableArray" id="dL9-Eg-Mc8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8g-Gu-eHw" userLabel="First Responder" sceneMemberID="firstResponder"/>

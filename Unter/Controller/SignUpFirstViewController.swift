@@ -18,38 +18,64 @@ class SignUpFirstViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
     
+    @IBOutlet var textFields: [UITextField]!
+    
+    var white = UIColor.white
+    var red = UIColor.red
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        continueButton.isEnabled = false
+        continueButton.setTitle("", for: .normal)
+        // Register View Controller as Observer
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: Notification.Name.UITextFieldTextDidChange, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
-        firstnameTextField.setBottomBorder()
-        lastnameTextField.setBottomBorder()
-        countryTextField.setBottomBorder()
-        emailTextField.setBottomBorder()
-        phoneTextField.setBottomBorder()
-        passwordTextField.setBottomBorder()
+        firstnameTextField.setBottomBorder(underlineColour: white)
+        lastnameTextField.setBottomBorder(underlineColour: white)
+        countryTextField.setBottomBorder(underlineColour: white)
+        emailTextField.setBottomBorder(underlineColour: white)
+        phoneTextField.setBottomBorder(underlineColour: white)
+        passwordTextField.setBottomBorder(underlineColour: white)
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
     }
+    
+    // MARK: - Notification Handling
+    
+    @objc private func textDidChange(_ notification: Notification) {
+        var formIsValid = true
+        
+        for textField in textFields {
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            let valid = validate(textField)
+            
+            guard valid else {
+                formIsValid = false
+                break
+            }
+        }
+        
+        if formIsValid {
+            continueButton.isEnabled = true
+            continueButton.setTitle("Continue", for: .normal)
+        } else {
+            continueButton.isEnabled = false
+            continueButton.setTitle("", for: .normal)
+        }
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    fileprivate func validate(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else {
+            return false
+        }
+        return text.count > 0
     }
     
-}
+} // end SignUpP1ViewController
+

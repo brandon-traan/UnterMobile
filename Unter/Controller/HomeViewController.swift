@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        usernameField.setBottomBorder()
-        passwordField.setBottomBorder()
+        usernameField.setBottomBorder(underlineColour: UIColor.white)
+        passwordField.setBottomBorder(underlineColour: UIColor.white)
     }
     
     override func viewWillAppear(_ animated: Bool) {

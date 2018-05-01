@@ -24,12 +24,12 @@ class CustomNavigationController: UINavigationController {
 }
 
 extension UITextField {
-    func setBottomBorder()
+    func setBottomBorder(underlineColour: UIColor)
     {
         self.borderStyle = UITextBorderStyle.none;
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = UIColor.white.cgColor
+        border.borderColor = underlineColour.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width,   width:  self.frame.size.width, height: self.frame.size.height)
         
         border.borderWidth = width
@@ -37,6 +37,13 @@ extension UITextField {
         self.layer.masksToBounds = true
         self.textColor = UIColor.white
         self.attributedPlaceholder = NSAttributedString(string: self.placeholder!, attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
+    }
+    
+    func textFieldIsEmpty() -> Bool {
+        if self.text?.isEmpty ?? true {
+            return true
+        }
+        return false
     }
 }
 
@@ -83,3 +90,5 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+
