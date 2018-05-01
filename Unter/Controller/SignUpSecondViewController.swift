@@ -24,7 +24,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createAccountButton.isEnabled = false
+        createAccountButton.setTitle("", for: .normal)
         // Do any additional setup after loading the view.
     }
 
@@ -120,6 +121,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
         attachmentLabel.text = "Photo Attached"
+        createAccountButton.isEnabled = true
+        createAccountButton.setTitle("Create Account", for: .normal)
     }
     
     /*
