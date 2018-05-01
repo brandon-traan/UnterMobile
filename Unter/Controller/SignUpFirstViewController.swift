@@ -20,16 +20,16 @@ class SignUpFirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+    }
+    
+    override func viewDidLayoutSubviews() {
         firstnameTextField.setBottomBorder()
         lastnameTextField.setBottomBorder()
         countryTextField.setBottomBorder()
         emailTextField.setBottomBorder()
         phoneTextField.setBottomBorder()
         passwordTextField.setBottomBorder()
-        
-
-        // Do any additional setup after loading the view.
     }
 
     
