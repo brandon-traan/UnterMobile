@@ -495,7 +495,27 @@
                     <view key="view" contentMode="scaleToFill" id="Tpr-sg-mHr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My Account Home" translatesAutoresizingMaskIntoConstraints="NO" id="9fE-JV-RML">
+                                <rect key="frame" x="30" y="117.99999999999999" width="315" height="184.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9fE-JV-RML" secondAttribute="height" multiplier="343:201" id="x3d-bm-Jbc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cN1-kQ-hgw">
+                                <rect key="frame" x="166" y="317" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dce-6G-NfN" firstAttribute="trailing" secondItem="9fE-JV-RML" secondAttribute="trailing" constant="30" id="VqX-Pc-1xO"/>
+                            <constraint firstItem="9fE-JV-RML" firstAttribute="leading" secondItem="Dce-6G-NfN" secondAttribute="leading" constant="30" id="ZyJ-gB-zvI"/>
+                            <constraint firstItem="9fE-JV-RML" firstAttribute="top" secondItem="Dce-6G-NfN" secondAttribute="top" constant="30" id="dkx-Mo-r4e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Dce-6G-NfN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="KLA-hG-XMQ"/>
@@ -506,7 +526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pue-YN-iz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="-825"/>
+            <point key="canvasLocation" x="1532" y="-825.3694581280788"/>
         </scene>
         <!--Book A Vehicle-->
         <scene sceneID="qmc-8S-4dP">
@@ -632,6 +652,7 @@
     <resources>
         <image name="Dropbox" width="2052" height="2052"/>
         <image name="Google Drive" width="48" height="48"/>
+        <image name="My Account Home" width="980" height="980"/>
         <image name="iCloud Drive" width="700" height="467"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
