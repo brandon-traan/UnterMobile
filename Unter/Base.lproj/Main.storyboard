@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ocl-g7-53a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WKX-bP-d5G">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -488,7 +488,7 @@
             </objects>
             <point key="canvasLocation" x="1532" y="-104.1871921182266"/>
         </scene>
-        <!--My Account View Controller-->
+        <!--My Account-->
         <scene sceneID="qqE-Pr-8uV">
             <objects>
                 <viewController id="Dxm-hp-Xh0" customClass="MyAccountViewController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
@@ -499,7 +499,10 @@
                         <viewLayoutGuide key="safeArea" id="Dce-6G-NfN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="KLA-hG-XMQ"/>
-                    <navigationItem key="navigationItem" id="ocK-dX-d9y"/>
+                    <navigationItem key="navigationItem" title="My Account" id="ocK-dX-d9y">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Uyc-T4-fPG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="M2h-4X-Arf"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pue-YN-iz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -526,7 +529,7 @@
         <scene sceneID="4Gv-qL-qbm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9C-0C-PEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="PJv-pc-lKm" sceneMemberID="viewController">
+                <navigationController id="PJv-pc-lKm" customClass="CustomNavigationController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Account" id="lWf-Qw-eMe">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="10" vertical="0.0"/>
                     </tabBarItem>
@@ -541,11 +544,11 @@
             </objects>
             <point key="canvasLocation" x="785" y="-825"/>
         </scene>
-        <!--Past Bookings-->
+        <!--Bookings-->
         <scene sceneID="WO2-yC-zbO">
             <objects>
-                <navigationController id="cQJ-83-O31" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Past Bookings" id="EcC-Ad-Pmu">
+                <navigationController id="cQJ-83-O31" customClass="CustomNavigationController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bookings" id="EcC-Ad-Pmu">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="10" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c9x-ZP-SJQ">
@@ -560,14 +563,14 @@
             </objects>
             <point key="canvasLocation" x="785" y="610"/>
         </scene>
-        <!--History Table View Controller-->
+        <!--Bookings-->
         <scene sceneID="eOq-vf-QY4">
             <objects>
                 <tableViewController id="xoi-3j-RK1" customClass="HistoryTableViewController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="feD-VR-tdK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookingCell" id="5mw-32-4sr">
@@ -599,7 +602,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" id="16W-WB-Q7v"/>
-                    <navigationItem key="navigationItem" id="d0q-4R-ANx"/>
+                    <navigationItem key="navigationItem" title="Bookings" id="d0q-4R-ANx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXq-K6-1BB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,7 +616,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zwg-qt-d0J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="vs9-2L-2eu" kind="relationship" relationship="viewControllers" id="cYg-D6-zSy"/>
