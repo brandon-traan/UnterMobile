@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WKX-bP-d5G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ocl-g7-53a">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -63,7 +63,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="ocl-g7-53a" kind="presentation" id="0IG-iK-FE0"/>
+                                    <segue destination="ocl-g7-53a" kind="presentation" id="NuD-Rc-iHB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="752" text="Don't Have An Account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Td-ie-ZZg">
@@ -456,23 +456,39 @@
             </objects>
             <point key="canvasLocation" x="-7" y="611"/>
         </scene>
-        <!--Book A Vehicle-->
+        <!--Book View Controller-->
         <scene sceneID="9Hg-6m-IjB">
             <objects>
                 <viewController id="sbr-Lr-B3i" customClass="BookViewController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zL4-fx-LAF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Og7-8M-gp7" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Og7-8M-gp7" firstAttribute="centerX" secondItem="zL4-fx-LAF" secondAttribute="centerX" id="OTO-Ca-JgO"/>
+                            <constraint firstItem="Og7-8M-gp7" firstAttribute="centerY" secondItem="zL4-fx-LAF" secondAttribute="centerY" constant="-41.5" id="WcC-jo-esf"/>
+                            <constraint firstItem="Og7-8M-gp7" firstAttribute="leading" secondItem="9hH-DK-oLR" secondAttribute="leading" id="oJS-on-B2Y"/>
+                            <constraint firstItem="9hH-DK-oLR" firstAttribute="bottom" secondItem="Og7-8M-gp7" secondAttribute="bottom" id="uSa-NQ-ZT6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9hH-DK-oLR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Book A Vehicle" id="b8L-XD-Ufk"/>
+                    <tabBarItem key="tabBarItem" title="" id="b8L-XD-Ufk"/>
+                    <navigationItem key="navigationItem" id="cMM-Qm-e6A"/>
+                    <connections>
+                        <outlet property="mapView" destination="Og7-8M-gp7" id="o3i-16-WR3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dz7-vx-LbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="-104"/>
+            <point key="canvasLocation" x="1532" y="-104.1871921182266"/>
         </scene>
-        <!--Account-->
+        <!--My Account View Controller-->
         <scene sceneID="qqE-Pr-8uV">
             <objects>
                 <viewController id="Dxm-hp-Xh0" customClass="MyAccountViewController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
@@ -482,13 +498,69 @@
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Dce-6G-NfN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" id="KLA-hG-XMQ"/>
+                    <tabBarItem key="tabBarItem" title="" id="KLA-hG-XMQ"/>
+                    <navigationItem key="navigationItem" id="ocK-dX-d9y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pue-YN-iz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="-432"/>
+            <point key="canvasLocation" x="1532" y="-825"/>
+        </scene>
+        <!--Book A Vehicle-->
+        <scene sceneID="qmc-8S-4dP">
+            <objects>
+                <navigationController id="vs9-2L-2eu" customClass="CustomNavigationController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Book A Vehicle" id="eQN-3l-xlS"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T38-tr-WWR">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sbr-Lr-B3i" kind="relationship" relationship="rootViewController" id="cvU-YW-bvm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Id1-EG-Cw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="-104"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="4Gv-qL-qbm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9C-0C-PEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="PJv-pc-lKm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" id="lWf-Qw-eMe">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="10" vertical="0.0"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Hi-87-SUD">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Dxm-hp-Xh0" kind="relationship" relationship="rootViewController" id="rfp-x2-o3b"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="785" y="-825"/>
         </scene>
         <!--Past Bookings-->
+        <scene sceneID="WO2-yC-zbO">
+            <objects>
+                <navigationController id="cQJ-83-O31" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Past Bookings" id="EcC-Ad-Pmu">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="10" vertical="0.0"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c9x-ZP-SJQ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xoi-3j-RK1" kind="relationship" relationship="rootViewController" id="Kfm-yn-M5a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tO8-wf-uaw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="785" y="610"/>
+        </scene>
+        <!--History Table View Controller-->
         <scene sceneID="eOq-vf-QY4">
             <objects>
                 <tableViewController id="xoi-3j-RK1" customClass="HistoryTableViewController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
@@ -526,16 +598,17 @@
                             <outlet property="delegate" destination="xoi-3j-RK1" id="sIX-Nb-B16"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Past Bookings" id="16W-WB-Q7v"/>
+                    <tabBarItem key="tabBarItem" title="" id="16W-WB-Q7v"/>
+                    <navigationItem key="navigationItem" id="d0q-4R-ANx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXq-K6-1BB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="249"/>
+            <point key="canvasLocation" x="1532" y="610"/>
         </scene>
-        <!--Custom Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="tA6-jR-F38">
             <objects>
-                <tabBarController id="ocl-g7-53a" customClass="CustomTabBarViewController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="ocl-g7-53a" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="h0J-np-fOq"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zwg-qt-d0J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -543,9 +616,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sbr-Lr-B3i" kind="relationship" relationship="viewControllers" id="I9P-i6-aex"/>
-                        <segue destination="xoi-3j-RK1" kind="relationship" relationship="viewControllers" id="vE2-Mx-StO"/>
-                        <segue destination="Dxm-hp-Xh0" kind="relationship" relationship="viewControllers" id="1tf-pd-zxf"/>
+                        <segue destination="vs9-2L-2eu" kind="relationship" relationship="viewControllers" id="cYg-D6-zSy"/>
+                        <segue destination="cQJ-83-O31" kind="relationship" relationship="viewControllers" id="tTm-5m-mKB"/>
+                        <segue destination="PJv-pc-lKm" kind="relationship" relationship="viewControllers" id="wEj-gH-3wS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEF-kv-8Tf" userLabel="First Responder" sceneMemberID="firstResponder"/>
