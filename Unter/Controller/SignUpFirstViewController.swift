@@ -23,11 +23,14 @@ class SignUpFirstViewController: UIViewController {
     var white = UIColor.white
     var red = UIColor.red
     
+    var formIncomplete = "Form Incomplete"
+    var formIsComplete = "Continue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         continueButton.isEnabled = false
-        continueButton.setTitle("", for: .normal)
+        continueButton.setTitle(formIncomplete, for: .normal)
         // Register View Controller as Observer
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: Notification.Name.UITextFieldTextDidChange, object: nil)
     }
@@ -63,10 +66,10 @@ class SignUpFirstViewController: UIViewController {
         
         if formIsValid {
             continueButton.isEnabled = true
-            continueButton.setTitle("Continue", for: .normal)
+            continueButton.setTitle(formIsComplete, for: .normal)
         } else {
             continueButton.isEnabled = false
-            continueButton.setTitle("", for: .normal)
+            continueButton.setTitle(formIncomplete, for: .normal)
         }
     }
     

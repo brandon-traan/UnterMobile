@@ -22,11 +22,15 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var lastChosenMediaType: String?
     let picker = UIImagePickerController()
     
+    var noAttachment = "No File Attached"
+    var hasAttachment = "Create Account"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createAccountButton.isEnabled = false
-        createAccountButton.setTitle("", for: .normal)
-        // Do any additional setup after loading the view.
+        createAccountButton.setTitle(noAttachment, for: .normal)
+        
+        attachmentLabel.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,9 +124,10 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         }
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
-        attachmentLabel.text = "Photo Attached"
+        attachmentLabel.text = "Attached Successfully!"
+        attachmentLabel.isHidden = false
         createAccountButton.isEnabled = true
-        createAccountButton.setTitle("Create Account", for: .normal )
+        createAccountButton.setTitle(hasAttachment, for: .normal )
     }
     
     /*
