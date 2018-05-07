@@ -11,6 +11,9 @@
 		072FDFA22097195100D8ED0C /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA12097195100D8ED0C /* BookViewController.swift */; };
 		072FDFA42097196E00D8ED0C /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */; };
 		072FDFA62097198800D8ED0C /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA52097198800D8ED0C /* HistoryTableViewController.swift */; };
+		074D9C7D20A043CA0012860B /* MyAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074D9C7C20A043CA0012860B /* MyAccountTableViewCell.swift */; };
+		074D9C7F20A047350012860B /* MyAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074D9C7E20A047350012860B /* MyAccountTableViewController.swift */; };
+		074D9C8120A04E110012860B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074D9C8020A04E110012860B /* User.swift */; };
 		0766694D20985C5900FA6BD8 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766694C20985C5900FA6BD8 /* CustomTabBarViewController.swift */; };
 		078BC6AE209C2E0C00A9EC65 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078BC6AD209C2E0C00A9EC65 /* GoogleMapsBase.framework */; };
 		078BC6B1209C2E2A00A9EC65 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078BC6AF209C2E2800A9EC65 /* GoogleMaps.framework */; };
@@ -67,6 +70,9 @@
 		072FDFA12097195100D8ED0C /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		072FDFA52097198800D8ED0C /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		074D9C7C20A043CA0012860B /* MyAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountTableViewCell.swift; sourceTree = "<group>"; };
+		074D9C7E20A047350012860B /* MyAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountTableViewController.swift; sourceTree = "<group>"; };
+		074D9C8020A04E110012860B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Unter/Controller/User.swift; sourceTree = SOURCE_ROOT; };
 		0766694C20985C5900FA6BD8 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		078BC6AD209C2E0C00A9EC65 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
 		078BC6AF209C2E2800A9EC65 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
@@ -162,7 +168,6 @@
 				078BC6B0209C2E2A00A9EC65 /* GoogleMapsCore.framework */,
 				078BC6AD209C2E0C00A9EC65 /* GoogleMapsBase.framework */,
 				8404746D207E3EE900AF75CD /* Assets.xcassets */,
-				8404746A207E3EE900AF75CD /* Unter.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				84539DA7208E113200870C3A /* Model */,
 				84047463207E3EE900AF75CD /* AppDelegate.swift */,
 				84047467207E3EE900AF75CD /* Main.storyboard */,
+				8404746A207E3EE900AF75CD /* Unter.xcdatamodeld */,
 				8404746F207E3EE900AF75CD /* LaunchScreen.storyboard */,
 				84047472207E3EE900AF75CD /* Info.plist */,
 			);
@@ -245,6 +251,7 @@
 		84539DA7208E113200870C3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				074D9C8020A04E110012860B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,11 +263,13 @@
 				07F7C3A62092F312006001A8 /* CustomNavigationController.swift */,
 				072FDF9D2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift */,
 				072FDFA12097195100D8ED0C /* BookViewController.swift */,
-				072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */,
 				072FDFA52097198800D8ED0C /* HistoryTableViewController.swift */,
 				079E6A2C2096E6E5001897F9 /* SignUpSecondViewController.swift */,
 				84539DAD208E189B00870C3A /* SignUpFirstViewController.swift */,
 				0766694C20985C5900FA6BD8 /* CustomTabBarViewController.swift */,
+				072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */,
+				074D9C7C20A043CA0012860B /* MyAccountTableViewCell.swift */,
+				074D9C7E20A047350012860B /* MyAccountTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -401,10 +410,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				072FDFA62097198800D8ED0C /* HistoryTableViewController.swift in Sources */,
+				074D9C7D20A043CA0012860B /* MyAccountTableViewCell.swift in Sources */,
 				07F7C3A72092F312006001A8 /* CustomNavigationController.swift in Sources */,
 				0766694D20985C5900FA6BD8 /* CustomTabBarViewController.swift in Sources */,
 				8404746C207E3EE900AF75CD /* Unter.xcdatamodeld in Sources */,
 				84047464207E3EE900AF75CD /* AppDelegate.swift in Sources */,
+				074D9C8120A04E110012860B /* User.swift in Sources */,
+				074D9C7F20A047350012860B /* MyAccountTableViewController.swift in Sources */,
 				84539DAC208E166400870C3A /* HomeViewController.swift in Sources */,
 				072FDF9E2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift in Sources */,
 				079E6A2D2096E6E5001897F9 /* SignUpSecondViewController.swift in Sources */,

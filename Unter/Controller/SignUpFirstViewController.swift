@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SignUpFirstViewController: UIViewController {
 
@@ -25,12 +26,37 @@ class SignUpFirstViewController: UIViewController {
     
     var formIncomplete = "Form Incomplete"
     var formIsComplete = "Continue"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         continueButton.isEnabled = false
         continueButton.setTitle(formIncomplete, for: .normal)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        // Test Creating User
+        let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
+        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        newUser.setValue("Brandon", forKey: "firstname")
+        newUser.setValue("Tran", forKey: "lastname")
+        newUser.setValue("Australia", forKey: "country")
+        newUser.setValue("brandon@brandon.com", forKey: "email")
+        newUser.setValue(0400000000, forKey: "phoneNumber")
+        newUser.setValue("admin", forKey: "password")
+        
+        do {
+            
+            try context.save()
+            
+        } catch {
+            
+            print("Failed saving")
+        }
+        
         // Register View Controller as Observer
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: Notification.Name.UITextFieldTextDidChange, object: nil)
     }
@@ -78,6 +104,10 @@ class SignUpFirstViewController: UIViewController {
             return false
         }
         return text.count > 0
+    }
+    
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        
     }
     
 } // end SignUpP1ViewController
