@@ -64,7 +64,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signInButtonTapped:" destination="uO6-iw-z25" eventType="touchUpInside" id="999-4F-41d"/>
-                                    <segue destination="ocl-g7-53a" kind="presentation" identifier="loginSuccessSegue" id="NuD-Rc-iHB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="752" text="Don't Have An Account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Td-ie-ZZg">
@@ -115,6 +114,7 @@
                         <outlet property="passwordField" destination="mLN-Sg-jop" id="e1m-9n-x4K"/>
                         <outlet property="unterLabel" destination="3yP-v9-FVS" id="ayE-Rg-4Sw"/>
                         <outlet property="usernameField" destination="Uhc-tO-4d9" id="72a-hw-oni"/>
+                        <segue destination="ocl-g7-53a" kind="show" identifier="loginSuccessSegue" id="hXG-9d-Qio"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyc-Vh-PAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -499,7 +499,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BHq-he-how">
-                                <rect key="frame" x="0.0" y="291" width="375" height="438"/>
+                                <rect key="frame" x="0.0" y="335" width="375" height="394"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -541,7 +541,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My Account Home" translatesAutoresizingMaskIntoConstraints="NO" id="9fE-JV-RML">
-                                <rect key="frame" x="0.0" y="1" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="45" width="375" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9fE-JV-RML" secondAttribute="height" multiplier="343:201" id="x3d-bm-Jbc"/>
                                 </constraints>

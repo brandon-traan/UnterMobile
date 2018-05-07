@@ -38,22 +38,27 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func signInButtonTapped(_ sender: Any) {
-        if !usernameField.textFieldIsEmpty() && !passwordField.textFieldIsEmpty() {
+        if usernameField.text != "" && passwordField.text != "" {
+            print("Hello WORLD")
             checkLoginDetails(email: usernameField.text!, password: passwordField.text!)
         }
     }
+
     
     func checkLoginDetails(email: String, password: String) {
         var userEmail = ""
         var userPassword = ""
+        print("Checking Login Details")
+        
         
         for user in users {
             
             userEmail = user.value(forKeyPath: "email") as! String
             userPassword = user.value(forKeyPath: "password") as! String
+            print(userPassword)
             
             if email == userEmail && password == userPassword {
-                //performSegue(withIdentifier: "loginSuccessSegue", sender: self)
+                performSegue(withIdentifier: "loginSuccessSegue", sender: self)
             }
             else {
                 // error

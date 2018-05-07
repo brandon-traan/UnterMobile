@@ -49,11 +49,10 @@ class SignUpFirstViewController: UIViewController {
         newUser.setValue("admin", forKey: "password")
         
         do {
-            
             try context.save()
+            print("Object Saved")
             
         } catch {
-            
             print("Failed saving")
         }
         
