@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072D8AE220A175C900299657 /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D8AE020A175C900299657 /* Users+CoreDataClass.swift */; };
+		072D8AE320A175C900299657 /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D8AE120A175C900299657 /* Users+CoreDataProperties.swift */; };
 		072FDF9E2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDF9D2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift */; };
 		072FDFA22097195100D8ED0C /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA12097195100D8ED0C /* BookViewController.swift */; };
 		072FDFA42097196E00D8ED0C /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */; };
 		072FDFA62097198800D8ED0C /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDFA52097198800D8ED0C /* HistoryTableViewController.swift */; };
 		074D9C7D20A043CA0012860B /* MyAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074D9C7C20A043CA0012860B /* MyAccountTableViewCell.swift */; };
 		074D9C7F20A047350012860B /* MyAccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074D9C7E20A047350012860B /* MyAccountTableViewController.swift */; };
-		074D9C8120A04E110012860B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074D9C8020A04E110012860B /* User.swift */; };
 		0766694D20985C5900FA6BD8 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0766694C20985C5900FA6BD8 /* CustomTabBarViewController.swift */; };
 		078BC6AE209C2E0C00A9EC65 /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078BC6AD209C2E0C00A9EC65 /* GoogleMapsBase.framework */; };
 		078BC6B1209C2E2A00A9EC65 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078BC6AF209C2E2800A9EC65 /* GoogleMaps.framework */; };
@@ -66,13 +67,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072D8AE020A175C900299657 /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
+		072D8AE120A175C900299657 /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		072FDF9D2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		072FDFA12097195100D8ED0C /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		072FDFA32097196E00D8ED0C /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		072FDFA52097198800D8ED0C /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		074D9C7C20A043CA0012860B /* MyAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountTableViewCell.swift; sourceTree = "<group>"; };
 		074D9C7E20A047350012860B /* MyAccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountTableViewController.swift; sourceTree = "<group>"; };
-		074D9C8020A04E110012860B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = Unter/Controller/User.swift; sourceTree = SOURCE_ROOT; };
 		0766694C20985C5900FA6BD8 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		078BC6AD209C2E0C00A9EC65 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
 		078BC6AF209C2E2800A9EC65 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
@@ -251,7 +253,8 @@
 		84539DA7208E113200870C3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				074D9C8020A04E110012860B /* User.swift */,
+				072D8AE020A175C900299657 /* Users+CoreDataClass.swift */,
+				072D8AE120A175C900299657 /* Users+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -415,8 +418,9 @@
 				0766694D20985C5900FA6BD8 /* CustomTabBarViewController.swift in Sources */,
 				8404746C207E3EE900AF75CD /* Unter.xcdatamodeld in Sources */,
 				84047464207E3EE900AF75CD /* AppDelegate.swift in Sources */,
-				074D9C8120A04E110012860B /* User.swift in Sources */,
+				072D8AE320A175C900299657 /* Users+CoreDataProperties.swift in Sources */,
 				074D9C7F20A047350012860B /* MyAccountTableViewController.swift in Sources */,
+				072D8AE220A175C900299657 /* Users+CoreDataClass.swift in Sources */,
 				84539DAC208E166400870C3A /* HomeViewController.swift in Sources */,
 				072FDF9E2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift in Sources */,
 				079E6A2D2096E6E5001897F9 /* SignUpSecondViewController.swift in Sources */,

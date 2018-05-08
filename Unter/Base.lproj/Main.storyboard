@@ -20,8 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uhc-tO-4d9">
-                                <rect key="frame" x="30" y="345" width="315" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uhc-tO-4d9">
+                                <rect key="frame" x="30" y="323" width="315" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="u26-5f-O0I"/>
                                 </constraints>
@@ -30,25 +30,25 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yP-v9-FVS">
-                                <rect key="frame" x="97.333333333333329" y="160" width="181.66666666666669" height="85"/>
+                                <rect key="frame" x="97" y="138" width="182" height="85"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="71"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLN-Sg-jop">
-                                <rect key="frame" x="30" y="403" width="315" height="50"/>
+                                <rect key="frame" x="30" y="381" width="315" height="50"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIy-Sy-LkW">
-                                <rect key="frame" x="200" y="521" width="145" height="30"/>
+                                <rect key="frame" x="200" y="499" width="145" height="52"/>
                                 <state key="normal" title="Forgotten Password?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfx-5r-1yh">
-                                <rect key="frame" x="30" y="473" width="315" height="40"/>
+                                <rect key="frame" x="30" y="451" width="315" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cx0-TA-44q"/>
@@ -81,6 +81,15 @@
                                     <segue destination="9sA-BV-arW" kind="show" identifier="signUpP1" id="1aX-Pu-In5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-Fo-xl8">
+                                <rect key="frame" x="328" y="395" width="17" height="22"/>
+                                <state key="normal" image="eyeIconClosed">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="hidePassword:" destination="uO6-iw-z25" eventType="touchUpInside" id="deL-Qz-E2D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -89,6 +98,7 @@
                             <constraint firstItem="0Td-ie-ZZg" firstAttribute="top" relation="lessThanOrEqual" secondItem="RIy-Sy-LkW" secondAttribute="bottom" constant="183" id="5Pi-YA-iPh"/>
                             <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="mLN-Sg-jop" secondAttribute="trailing" constant="30" id="5dd-3a-dms"/>
                             <constraint firstItem="wbK-Na-GFc" firstAttribute="centerY" secondItem="0Td-ie-ZZg" secondAttribute="centerY" id="Amu-3D-C5p"/>
+                            <constraint firstItem="Dcl-Fo-xl8" firstAttribute="top" secondItem="mLN-Sg-jop" secondAttribute="bottom" constant="-36" id="DBq-Y9-tH1"/>
                             <constraint firstItem="Mh4-v6-XsD" firstAttribute="bottom" secondItem="0Td-ie-ZZg" secondAttribute="bottom" constant="23" id="DMM-aJ-N91" customClass="KeyboardLayoutConstraint" customModule="Unter" customModuleProvider="target"/>
                             <constraint firstItem="mLN-Sg-jop" firstAttribute="top" secondItem="Uhc-tO-4d9" secondAttribute="bottom" constant="8" symbolic="YES" id="DS6-bt-qIa"/>
                             <constraint firstItem="tfx-5r-1yh" firstAttribute="top" secondItem="mLN-Sg-jop" secondAttribute="bottom" constant="20" id="GbV-yH-HnI"/>
@@ -101,19 +111,21 @@
                             <constraint firstItem="RIy-Sy-LkW" firstAttribute="top" secondItem="tfx-5r-1yh" secondAttribute="bottom" constant="8" symbolic="YES" id="mEG-e9-7b4"/>
                             <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="RIy-Sy-LkW" secondAttribute="trailing" constant="30" id="qQn-ww-tpa"/>
                             <constraint firstItem="mLN-Sg-jop" firstAttribute="height" secondItem="Uhc-tO-4d9" secondAttribute="height" id="r80-GK-mvL"/>
-                            <constraint firstItem="Uhc-tO-4d9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mh4-v6-XsD" secondAttribute="top" constant="70" id="rNL-hY-jIX"/>
+                            <constraint firstItem="Uhc-tO-4d9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mh4-v6-XsD" secondAttribute="top" constant="20" id="rNL-hY-jIX"/>
                             <constraint firstItem="tfx-5r-1yh" firstAttribute="leading" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="30" id="suZ-N6-u2z"/>
                             <constraint firstItem="Uhc-tO-4d9" firstAttribute="leading" secondItem="Mh4-v6-XsD" secondAttribute="leading" constant="30" id="uqo-18-xlu"/>
                             <constraint firstItem="Mh4-v6-XsD" firstAttribute="trailing" secondItem="tfx-5r-1yh" secondAttribute="trailing" constant="30" id="vbA-7Y-1J0"/>
+                            <constraint firstItem="Dcl-Fo-xl8" firstAttribute="leading" secondItem="mLN-Sg-jop" secondAttribute="trailing" constant="-17" id="w2r-WD-dV8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mh4-v6-XsD"/>
                     </view>
                     <navigationItem key="navigationItem" id="B7k-iF-wYe"/>
                     <connections>
+                        <outlet property="emailField" destination="Uhc-tO-4d9" id="72a-hw-oni"/>
+                        <outlet property="hidePasswordButton" destination="Dcl-Fo-xl8" id="pLA-6R-05q"/>
                         <outlet property="loginButton" destination="tfx-5r-1yh" id="lTl-8R-XTs"/>
                         <outlet property="passwordField" destination="mLN-Sg-jop" id="e1m-9n-x4K"/>
                         <outlet property="unterLabel" destination="3yP-v9-FVS" id="ayE-Rg-4Sw"/>
-                        <outlet property="usernameField" destination="Uhc-tO-4d9" id="72a-hw-oni"/>
                         <segue destination="ocl-g7-53a" kind="show" identifier="loginSuccessSegue" id="hXG-9d-Qio"/>
                     </connections>
                 </viewController>
@@ -697,6 +709,7 @@
         <image name="Dropbox" width="2052" height="2052"/>
         <image name="Google Drive" width="48" height="48"/>
         <image name="My Account Home" width="1830" height="1984"/>
+        <image name="eyeIconClosed" width="17" height="13"/>
         <image name="iCloud Drive" width="700" height="467"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -30,15 +30,13 @@ class SignUpFirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         continueButton.isEnabled = false
         continueButton.setTitle(formIncomplete, for: .normal)
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
         let context = appDelegate.persistentContainer.viewContext
         
-        // Test Creating User
+        // Create Test User
         let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
         newUser.setValue("Brandon", forKey: "firstname")
