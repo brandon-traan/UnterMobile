@@ -126,7 +126,7 @@
                         <outlet property="loginButton" destination="tfx-5r-1yh" id="lTl-8R-XTs"/>
                         <outlet property="passwordField" destination="mLN-Sg-jop" id="e1m-9n-x4K"/>
                         <outlet property="unterLabel" destination="3yP-v9-FVS" id="ayE-Rg-4Sw"/>
-                        <segue destination="ocl-g7-53a" kind="show" identifier="loginSuccessSegue" id="hXG-9d-Qio"/>
+                        <segue destination="ocl-g7-53a" kind="presentation" identifier="loginSuccessSegue" id="2im-wI-fpn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyc-Vh-PAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -511,7 +511,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BHq-he-how">
-                                <rect key="frame" x="0.0" y="335" width="375" height="394"/>
+                                <rect key="frame" x="0.0" y="291" width="375" height="438"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -553,7 +553,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="My Account Home" translatesAutoresizingMaskIntoConstraints="NO" id="9fE-JV-RML">
-                                <rect key="frame" x="0.0" y="45" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9fE-JV-RML" secondAttribute="height" multiplier="343:201" id="x3d-bm-Jbc"/>
                                 </constraints>
@@ -574,7 +574,11 @@
                     <tabBarItem key="tabBarItem" title="" id="KLA-hG-XMQ"/>
                     <navigationItem key="navigationItem" title="My Account" id="ocK-dX-d9y">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Uyc-T4-fPG"/>
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="M2h-4X-Arf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="M2h-4X-Arf">
+                            <connections>
+                                <action selector="logout:" destination="Dxm-hp-Xh0" id="R4l-sl-sjJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myAccountTableView" destination="BHq-he-how" id="BD9-2T-f5L"/>

@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var unterLabel: UILabel!
     @IBOutlet weak var hidePasswordButton: UIButton!
     
-    var loginButtonTitleEmpty = "Please Enter Your Email And Password"
+    var loginButtonTitleEmpty = "Empty Email or Password"
     var loginButtonTitleIncorrect = "Incorrect Email or Password"
     var loginButtonTitleDefault = "Sign In"
     
@@ -27,13 +27,16 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        loginButton.setTitle(loginButtonTitleDefault, for: .normal)
+        emailField.text = ""
+        passwordField.text = ""
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         emailField.setBottomBorder(underlineColour: UIColor.white)
         passwordField.setBottomBorder(underlineColour: UIColor.white)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
     }
 
     @IBAction func signInButtonTapped(_ sender: Any) {
@@ -80,7 +83,6 @@ class HomeViewController: UIViewController {
             
             if email.lowercased() == userEmail.lowercased() && password == userPassword {
                 foundUser = true
-                loginButton.setTitle(loginButtonTitleDefault, for: .normal)
             }
             else {
                 foundUser = false
@@ -89,6 +91,7 @@ class HomeViewController: UIViewController {
         }
         
         if foundUser {
+            
             performSegue(withIdentifier: "loginSuccessSegue", sender: self)
         }
     }
