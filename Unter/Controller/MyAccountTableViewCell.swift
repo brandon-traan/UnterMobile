@@ -12,6 +12,9 @@ class MyAccountTableViewCell: UITableViewCell {
 
     @IBOutlet weak var firstnameLabel: UILabel!
     @IBOutlet weak var lastnameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

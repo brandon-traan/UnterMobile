@@ -32,6 +32,8 @@ class HomeViewController: UIViewController {
         loginButton.setTitle(loginButtonTitleDefault, for: .normal)
         emailField.text = ""
         passwordField.text = ""
+        hidePasswordButton.setImage(UIImage(named: "eyeIconClosed"), for: .normal)
+        passwordField.isSecureTextEntry = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,7 +93,6 @@ class HomeViewController: UIViewController {
         }
         
         if foundUser {
-            
             performSegue(withIdentifier: "loginSuccessSegue", sender: self)
         }
     }
