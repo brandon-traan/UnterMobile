@@ -71,9 +71,8 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
             {
                 return UITableViewCell()
             }
-            // TODO : FIX THIS
-            let phoneNumber = String(describing: user.value(forKey: "phoneNumber"))
-            cell.phoneNumberLabel.text = phoneNumber as String
+            let phoneNumber = user.value(forKey: "phoneNumber") as! Int
+            cell.phoneNumberLabel.text = String(phoneNumber)
             return cell
         }
         
