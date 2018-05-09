@@ -30,6 +30,7 @@ class SignUpFirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showNavigationBar()
         continueButton.isEnabled = false
         continueButton.setTitle(formIncomplete, for: .normal)
         

@@ -19,8 +19,6 @@ class CustomNavigationController: UINavigationController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
- 
-    
 }
 
 extension UITextField {
@@ -104,6 +102,19 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func hideNavigationBar(){
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+    }
+    
+    func showNavigationBar() {
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
+
+
 
 

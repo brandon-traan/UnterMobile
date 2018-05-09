@@ -12,17 +12,17 @@ import CoreData
 class MyAccountViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var myAccountTableView: UITableView!
+    // @IBOutlet weak var accountNameLabel: UILabel!
     
     var users : [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.myAccountTableView.reloadData()
+        hideNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
         }
@@ -52,8 +52,15 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
             {
                 return UITableViewCell()
             }
-            cell.firstnameLabel.text = user.value(forKeyPath: "firstname") as? String
-            cell.lastnameLabel.text = user.value(forKeyPath: "lastname") as? String
+            let firstname = user.value(forKeyPath: "firstname") as? String
+            let lastname = user.value(forKeyPath: "lastname") as? String
+            
+            // Cell Population
+            cell.firstnameLabel.text = firstname! + " " + lastname!
+            
+            // Sign In As: Label Population
+            // accountNameLabel.text = firstname! + " " + lastname!
+            
             return cell
         }
 
@@ -71,8 +78,8 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
             {
                 return UITableViewCell()
             }
-            let phoneNumber = user.value(forKey: "phoneNumber") as! Int
-            cell.phoneNumberLabel.text = String(phoneNumber)
+            let phoneNumber = user.value(forKey: "phoneNumber") as! Int64
+            cell.phoneNumberLabel.text = "0" + String(phoneNumber)
             return cell
         }
         
@@ -87,7 +94,11 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
 
         return cell
     }
-
+    
+    @IBAction func editAccount(_ sender: Any) {
+        // Edit Account
+    }
+    
     @IBAction func logout(_ sender: Any) {
         if self.presentingViewController != nil {
             self.dismiss(animated: false, completion: {
