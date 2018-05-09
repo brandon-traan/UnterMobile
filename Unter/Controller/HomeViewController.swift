@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
         if emailField.text != "" && passwordField.text != "" {
             checkLoginDetails(email: emailField.text!, password: passwordField.text!)
         } else {
-            loginButton.setTitle(loginButtonTitleEmpty, for: .normal)
+            loginButton.displayToastMessage(loginButtonTitleEmpty, loginButtonTitleDefault)
         }
     }
     
@@ -88,7 +88,7 @@ class HomeViewController: UIViewController {
             }
             else {
                 foundUser = false
-                loginButton.setTitle(loginButtonTitleIncorrect, for: .normal)
+                loginButton.displayToastMessage(loginButtonTitleIncorrect, loginButtonTitleDefault)
             }
         }
         

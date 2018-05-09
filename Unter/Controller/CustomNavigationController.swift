@@ -77,6 +77,21 @@ extension UITextField {
             return UIColor(cgColor: color)
         }
     }
+    
+    func displayToastMessage(_ message : String, _ defaultMessage: String) {
+        var totalTime = 1
+        
+        self.setTitle(message, for: .normal)
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
+            if totalTime != 0 {
+                totalTime -= 1
+            } else {
+                self.setTitle(defaultMessage, for: .normal)
+                t.invalidate()
+            }
+        })
+    }
 }
 
 extension UIViewController {
