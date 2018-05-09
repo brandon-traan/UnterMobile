@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C205" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Booking" representedClassName="Booking" syncable="YES" codeGenerationType="class">
+        <attribute name="car_make" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="car_model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customer_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="booking" inverseEntity="Users" syncable="YES"/>
+        <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicles" inverseName="booking" inverseEntity="Vehicles" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Users" representedClassName="Users" syncable="YES">
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,8 +20,19 @@
         <attribute name="license" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="booking" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Booking" inverseName="user" inverseEntity="Booking" syncable="YES"/>
+    </entity>
+    <entity name="Vehicles" representedClassName="Vehicles" syncable="YES" codeGenerationType="class">
+        <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="booking" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Booking" inverseName="vehicle" inverseEntity="Booking" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Users" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Users" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Vehicles" positionX="-63" positionY="36" width="128" height="120"/>
+        <element name="Booking" positionX="-54" positionY="45" width="128" height="135"/>
+        <element name="Location" positionX="-36" positionY="72" width="128" height="75"/>
     </elements>
 </model>

@@ -11,6 +11,7 @@ import CoreData
 
 class MyAccountViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var accountBGIV: UIImageView!
     @IBOutlet weak var myAccountTableView: UITableView!
     // @IBOutlet weak var accountNameLabel: UILabel!
     
@@ -20,6 +21,7 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         hideNavigationBar()
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
