@@ -101,6 +101,13 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBAction func logout(_ sender: Any) {
         if self.presentingViewController != nil {
+            
+            // Toast Style & Execution
+            var style = ToastStyle()
+            style.backgroundColor = .white
+            style.messageColor = .orange
+            self.navigationController!.view.window?.makeToast("Logout Successful!", duration: 2.0, position: .center, style: style)
+            
             self.dismiss(animated: false, completion: {
                 self.navigationController!.popToRootViewController(animated: true)
             })
