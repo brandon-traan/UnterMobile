@@ -43,7 +43,7 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let user = users[indexPath.row]
+        let user = users[0]
         guard let cell = myAccountTableView.dequeueReusableCell(withIdentifier: "nameCellIdentifier", for: indexPath) as? MyAccountTableViewCell else
         {
             return UITableViewCell()
