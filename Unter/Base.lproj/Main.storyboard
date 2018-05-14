@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WKX-bP-d5G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WKX-bP-d5G">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -221,7 +221,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="continueButtonTapped:" destination="9sA-BV-arW" eventType="touchUpInside" id="wTA-uC-pu4"/>
-                                    <segue destination="oNf-qX-LEq" kind="show" identifier="signUpP2" id="x9q-yW-C5i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -275,6 +274,7 @@
                         <outletCollection property="textFields" destination="T3g-uJ-1QH" collectionClass="NSMutableArray" id="zds-cT-h7N"/>
                         <outletCollection property="textFields" destination="rKQ-pP-iKc" collectionClass="NSMutableArray" id="dKs-7U-PEf"/>
                         <outletCollection property="textFields" destination="r4v-6d-q5P" collectionClass="NSMutableArray" id="dL9-Eg-Mc8"/>
+                        <segue destination="oNf-qX-LEq" kind="show" identifier="signUpP2" id="edA-PR-YRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8g-Gu-eHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -395,6 +395,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccount:" destination="oNf-qX-LEq" eventType="touchUpInside" id="hdo-Ew-RpN"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Google Drive" translatesAutoresizingMaskIntoConstraints="NO" id="YwK-sk-cSW">
                                 <rect key="frame" x="38" y="355" width="35" height="35"/>

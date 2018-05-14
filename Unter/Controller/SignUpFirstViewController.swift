@@ -26,33 +26,20 @@ class SignUpFirstViewController: UIViewController {
     
     var formIncomplete = "Form Incomplete"
     var formIsComplete = "Continue"
-
+    
+    
+    var user = (firstName: "", lastName: "", country: "", email: "", phoneNumber: 0, password: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         showNavigationBar()
         continueButton.isEnabled = false
         continueButton.setTitle(formIncomplete, for: .normal)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        // Create Test User
-        let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
-        let newUser = NSManagedObject(entity: entity!, insertInto: context)
-        newUser.setValue("Brandon", forKey: "firstname")
-        newUser.setValue("Tran", forKey: "lastname")
-        newUser.setValue("Australia", forKey: "country")
-        newUser.setValue("brandon@brandon.com", forKey: "email")
-        newUser.setValue(0400000000, forKey: "phoneNumber")
-        newUser.setValue("admin", forKey: "password")
-        
         do {
-            try context.save()
-            print("Object Saved")
-            
-        } catch {
-            print("Failed saving")
+            deleteExistingUsers()
+            // createTestUser()
         }
         
         // Register View Controller as Observer
@@ -105,8 +92,78 @@ class SignUpFirstViewController: UIViewController {
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
+        // user = (firstnameTextField.text!, lastnameTextField.text!, countryTextField.text!, emailTextField.text!, // //phoneTextField.text!, passwordTextField.text!)
+        user.firstName = firstnameTextField.text!
+        user.lastName = lastnameTextField.text!
+        user.country = countryTextField.text!
+        user.email = emailTextField.text!
+        user.phoneNumber = Int(phoneTextField.text!)!
+        user.password = passwordTextField.text!
+        
+        performSegue(withIdentifier: "signUpP2", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signUpP2" {
+            if let signP2Controller = segue.destination as? SignUpSecondViewController {
+                signP2Controller.firstname = user.firstName
+                signP2Controller.lastname = user.lastName
+                signP2Controller.country = user.country
+                signP2Controller.email = user.email
+                signP2Controller.phoneNumber = user.phoneNumber
+                signP2Controller.password = user.password
+            }
+        }
+    }
+    
+    // MARK: Delete Data Records
+    
+    func deleteExistingUsers() -> Void {
+        let context = getContext()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        let result = try? context.fetch(fetchRequest)
+        let users = result as! [Users]
+        
+        for user in users {
+            context.delete(user)
+        }
+        
+        do {
+            try context.save()
+            print("Save Deleted Object!")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        } catch {
+            print("Failed Deleting Object")
+        }
         
     }
     
+    func createTestUser() -> Void {
+        let context = getContext()
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
+        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        newUser.setValue("Brandon", forKey: "firstname")
+        newUser.setValue("Tran", forKey: "lastname")
+        newUser.setValue("Australia", forKey: "country")
+        newUser.setValue("admin", forKey: "email")
+        newUser.setValue(0400000000, forKey: "phoneNumber")
+        newUser.setValue("admin", forKey: "password")
+        
+        do {
+            try context.save()
+            print("Save Created Object")
+            
+        } catch {
+            print("Failed Saving Object")
+        }
+    }
+    
+    // MARK: Get Context
+    
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
 } // end SignUpP1ViewController
-

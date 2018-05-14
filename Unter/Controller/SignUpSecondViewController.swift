@@ -10,6 +10,7 @@ import UIKit
 import AVKit
 import AVFoundation
 import MobileCoreServices
+import CoreData
 
 class SignUpSecondViewController: UIViewController, UITextFieldDelegate,
 UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -25,17 +26,20 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var noAttachment = "No File Attached"
     var hasAttachment = "Create Account"
     
+    var firstname: String!
+    var lastname: String!
+    var email: String!
+    var country: String!
+    var password: String!
+    var phoneNumber: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createAccountButton.isEnabled = false
         createAccountButton.setTitle(noAttachment, for: .normal)
-        
         attachmentLabel.isHidden = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        print(firstname)
     }
     
     //
@@ -116,7 +120,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil else {
@@ -130,14 +134,44 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         createAccountButton.setTitle(hasAttachment, for: .normal )
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func createAccount(_ sender: Any) {
+        // Create User
+        createUser()
+        
+        // Toast Style & Execution
+        var style = ToastStyle()
+        style.backgroundColor = .white
+        style.messageColor = .orange
+        self.navigationController!.view.window?.makeToast("Account Created!", duration: 2.0, position: .center, style: style)
+        
+        // Pop ViewController
+        self.navigationController!.popToRootViewController(animated: true)
     }
-    */
+
+    func createUser() -> Void {
+        let context = getContext()
+
+        let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
+        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        newUser.setValue(firstname, forKey: "firstname")
+        newUser.setValue(lastname, forKey: "lastname")
+        newUser.setValue(country, forKey: "country")
+        newUser.setValue(email, forKey: "email")
+        newUser.setValue(phoneNumber, forKey: "phoneNumber")
+        newUser.setValue(password, forKey: "password")
+        
+        do {
+            try context.save()
+            print("Save Created Object")
+            
+        } catch {
+            print("Failed Saving Object")
+        }
+    }
+    
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
 
 }

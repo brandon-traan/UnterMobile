@@ -70,7 +70,7 @@ class HomeViewController: UIViewController {
     func checkLoginDetails(email: String, password: String) {
         var userEmail = ""
         var userPassword = ""
-        var foundUser = true
+        var foundUser = false
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -91,17 +91,17 @@ class HomeViewController: UIViewController {
             userEmail = user.value(forKeyPath: "email") as! String
             userPassword = user.value(forKeyPath: "password") as! String
             
+            print("User Email: " + userEmail)
+            
             if email.lowercased() == userEmail.lowercased() && password == userPassword {
                 foundUser = true
-            }
-            else {
-                foundUser = false
-                loginButton.displayToastMessage(loginButtonTitleIncorrect, loginButtonTitleDefault)
             }
         }
         
         if foundUser {
             performSegue(withIdentifier: "loginSuccessSegue", sender: self)
+        } else {
+            loginButton.displayToastMessage(loginButtonTitleIncorrect, loginButtonTitleDefault)
         }
     }
 } // end class
