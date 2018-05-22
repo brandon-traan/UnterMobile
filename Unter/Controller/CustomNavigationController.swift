@@ -12,19 +12,27 @@ class CustomNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set Navigation Bar To Invisible
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
         
-        
+        // Enable Hidden Keyboard
         self.hideKeyboardWhenTappedAround()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
 }
 
+//
+// MARK: UITextField
+//
 extension UITextField {
-    func setBottomBorder(underlineColour: UIColor)
-    {
+    
+    //
+    // MARK: Remove Default Look. Add Underline to Width of Textfields
+    //
+    func setBottomBorder(underlineColour: UIColor) {
         self.borderStyle = UITextBorderStyle.none;
         let border = CALayer()
         let width = CGFloat(1.0)
@@ -39,13 +47,16 @@ extension UITextField {
     }
     
     func textFieldIsEmpty() -> Bool {
-        if self.text?.isEmpty ?? true {
+        if (self.text?.isEmpty)! {
             return true
         }
         return false
     }
 }
 
+//
+// MARK: UIButton
+//
 @IBDesignable extension UIButton {
     
     @IBInspectable var borderWidth: CGFloat {
@@ -77,9 +88,11 @@ extension UITextField {
         }
     }
     
-    func displayToastMessage(_ message : String, _ defaultMessage: String) {
+    //
+    // MARK: Button Title Timer
+    //
+    func changeTitleTimer(_ message : String, _ defaultMessage: String) {
         var totalTime = 1
-        
         self.setTitle(message, for: .normal)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
@@ -93,6 +106,9 @@ extension UITextField {
     }
 }
 
+//
+// MARK: UIViewController
+//
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -107,7 +123,6 @@ extension UIViewController {
     func hideNavigationBar(){
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
     }
     
     func showNavigationBar() {

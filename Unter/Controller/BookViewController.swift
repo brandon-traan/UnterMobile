@@ -11,6 +11,7 @@ import GoogleMaps
 
 class BookViewController: UIViewController {
 
+    // MARK: UI Properties
     @IBOutlet weak var mapView: GMSMapView!
     
     private let locationManager = CLLocationManager()
@@ -20,19 +21,17 @@ class BookViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
     }
-    
 }
 
+//
 // MARK: - CLLocationManagerDelegate
-
+//
 extension BookViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-
         guard status == .authorizedWhenInUse else {
             return
         }
-
         locationManager.startUpdatingLocation()
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
@@ -42,7 +41,6 @@ extension BookViewController: CLLocationManagerDelegate {
         guard let location = locations.first else {
             return
         }
-
         mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
     }

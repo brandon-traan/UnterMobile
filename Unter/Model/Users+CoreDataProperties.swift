@@ -2,7 +2,7 @@
 //  Users+CoreDataProperties.swift
 //  Unter
 //
-//  Created by Brandon Tran on 8/5/18.
+//  Created by Brandon Tran on 22/5/18.
 //  Copyright © 2018 Brandon Tran. All rights reserved.
 //
 //
@@ -24,5 +24,6 @@ extension Users {
     @NSManaged public var license: NSData?
     @NSManaged public var password: String?
     @NSManaged public var phoneNumber: Int64
+    @NSManaged public var booking: Booking?
 
 }

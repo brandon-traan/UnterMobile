@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
         if emailField.text != "" && passwordField.text != "" {
             checkLoginDetails(email: emailField.text!, password: passwordField.text!)
         } else {
-            loginButton.displayToastMessage(loginButtonTitleEmpty, loginButtonTitleDefault)
+            loginButton.changeTitleTimer(loginButtonTitleEmpty, loginButtonTitleDefault)
         }
     }
     
@@ -110,7 +110,7 @@ class HomeViewController: UIViewController {
         if foundUser {
             performSegue(withIdentifier: "loginSuccessSegue", sender: self)
         }
-        loginButton.displayToastMessage(loginButtonTitleIncorrect, loginButtonTitleDefault)
+        loginButton.changeTitleTimer(loginButtonTitleIncorrect, loginButtonTitleDefault)
     }
 } // end class
 

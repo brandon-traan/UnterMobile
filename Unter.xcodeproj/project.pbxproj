@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0702BDC320B3EB6100975943 /* Vehicles+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702BDBD20B3EB6100975943 /* Vehicles+CoreDataClass.swift */; };
+		0702BDC420B3EB6100975943 /* Vehicles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702BDBE20B3EB6100975943 /* Vehicles+CoreDataProperties.swift */; };
+		0702BDC520B3EB6100975943 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702BDBF20B3EB6100975943 /* Location+CoreDataClass.swift */; };
+		0702BDC620B3EB6100975943 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702BDC020B3EB6100975943 /* Location+CoreDataProperties.swift */; };
+		0702BDC720B3EB6100975943 /* Booking+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702BDC120B3EB6100975943 /* Booking+CoreDataClass.swift */; };
+		0702BDC820B3EB6100975943 /* Booking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0702BDC220B3EB6100975943 /* Booking+CoreDataProperties.swift */; };
 		072D8AE220A175C900299657 /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D8AE020A175C900299657 /* Users+CoreDataClass.swift */; };
 		072D8AE320A175C900299657 /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D8AE120A175C900299657 /* Users+CoreDataProperties.swift */; };
 		072FDF9E2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDF9D2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift */; };
@@ -68,6 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0702BDBD20B3EB6100975943 /* Vehicles+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicles+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0702BDBE20B3EB6100975943 /* Vehicles+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicles+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0702BDBF20B3EB6100975943 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0702BDC020B3EB6100975943 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0702BDC120B3EB6100975943 /* Booking+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booking+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0702BDC220B3EB6100975943 /* Booking+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booking+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		072D8AE020A175C900299657 /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
 		072D8AE120A175C900299657 /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		072FDF9D2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
@@ -255,6 +267,12 @@
 		84539DA7208E113200870C3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0702BDBD20B3EB6100975943 /* Vehicles+CoreDataClass.swift */,
+				0702BDBE20B3EB6100975943 /* Vehicles+CoreDataProperties.swift */,
+				0702BDBF20B3EB6100975943 /* Location+CoreDataClass.swift */,
+				0702BDC020B3EB6100975943 /* Location+CoreDataProperties.swift */,
+				0702BDC120B3EB6100975943 /* Booking+CoreDataClass.swift */,
+				0702BDC220B3EB6100975943 /* Booking+CoreDataProperties.swift */,
 				072D8AE020A175C900299657 /* Users+CoreDataClass.swift */,
 				072D8AE120A175C900299657 /* Users+CoreDataProperties.swift */,
 			);
@@ -419,17 +437,23 @@
 				84ECC1F020A6CF100061E397 /* Toast.swift in Sources */,
 				074D9C7D20A043CA0012860B /* MyAccountTableViewCell.swift in Sources */,
 				07F7C3A72092F312006001A8 /* CustomNavigationController.swift in Sources */,
+				0702BDC620B3EB6100975943 /* Location+CoreDataProperties.swift in Sources */,
 				0766694D20985C5900FA6BD8 /* CustomTabBarViewController.swift in Sources */,
 				8404746C207E3EE900AF75CD /* Unter.xcdatamodeld in Sources */,
 				84047464207E3EE900AF75CD /* AppDelegate.swift in Sources */,
 				072D8AE320A175C900299657 /* Users+CoreDataProperties.swift in Sources */,
 				074D9C7F20A047350012860B /* MyAccountTableViewController.swift in Sources */,
+				0702BDC520B3EB6100975943 /* Location+CoreDataClass.swift in Sources */,
 				072D8AE220A175C900299657 /* Users+CoreDataClass.swift in Sources */,
+				0702BDC720B3EB6100975943 /* Booking+CoreDataClass.swift in Sources */,
 				84539DAC208E166400870C3A /* HomeViewController.swift in Sources */,
+				0702BDC320B3EB6100975943 /* Vehicles+CoreDataClass.swift in Sources */,
 				072FDF9E2096FB9F00D8ED0C /* KeyboardLayoutConstraint.swift in Sources */,
 				079E6A2D2096E6E5001897F9 /* SignUpSecondViewController.swift in Sources */,
 				072FDFA22097195100D8ED0C /* BookViewController.swift in Sources */,
+				0702BDC820B3EB6100975943 /* Booking+CoreDataProperties.swift in Sources */,
 				84539DAE208E189B00870C3A /* SignUpFirstViewController.swift in Sources */,
+				0702BDC420B3EB6100975943 /* Vehicles+CoreDataProperties.swift in Sources */,
 				072FDFA42097196E00D8ED0C /* MyAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

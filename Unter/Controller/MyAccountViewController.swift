@@ -18,6 +18,9 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: Variables
     var users : [NSManagedObject] = []
     
+    // MARK: Toast Message
+    var logoutMessage = "Logout Successful"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideNavigationBar()
@@ -51,12 +54,17 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: Populate Table Rows According to Row Number
     //
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let user = users[0]
+        
         guard let cell = myAccountTableView.dequeueReusableCell(withIdentifier: "nameCellIdentifier", for: indexPath) as? MyAccountTableViewCell else
         {
             return UITableViewCell()
         }
         
+        //
+        // TODO: Replace if statements with Switch
+        //
         if indexPath.row == 0 {
             guard let cell = myAccountTableView.dequeueReusableCell(withIdentifier: "nameCellIdentifier", for: indexPath) as? MyAccountTableViewCell else
             {
@@ -65,12 +73,7 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
             let firstname = user.value(forKeyPath: "firstname") as? String
             let lastname = user.value(forKeyPath: "lastname") as? String
             
-            // Cell Population
             cell.firstnameLabel.text = firstname! + " " + lastname!
-            
-            // Sign In As: Label Population
-            // accountNameLabel.text = firstname! + " " + lastname!
-            
             return cell
         }
 
@@ -101,7 +104,6 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
             cell.countryLabel.text = user.value(forKey: "country") as? String
             return cell
         }
-
         return cell
     }
     
@@ -113,7 +115,7 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     //
-    // MARK: Logout. Go Back To Login View When Pressed
+    // MARK: Go Back To Login View When Pressed
     //
     @IBAction func logout(_ sender: Any) {
         if self.presentingViewController != nil {
@@ -123,7 +125,7 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
             style.backgroundColor = .white
             style.messageColor = .orange
             
-            self.navigationController!.view.window?.makeToast("Logout Successful!", duration: 2.0, position: .center, style: style)
+            self.navigationController!.view.window?.makeToast(logoutMessage, duration: 2.0, position: .center, style: style)
             
             self.dismiss(animated: false, completion: {
                 self.navigationController!.popToRootViewController(animated: true)
