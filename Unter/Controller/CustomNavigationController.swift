@@ -15,6 +15,7 @@ class CustomNavigationController: UINavigationController {
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
         
+        
         self.hideKeyboardWhenTappedAround()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)

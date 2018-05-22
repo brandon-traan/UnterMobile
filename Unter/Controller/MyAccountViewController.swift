@@ -11,10 +11,11 @@ import CoreData
 
 class MyAccountViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: UI Properties
     @IBOutlet weak var accountBGIV: UIImageView!
     @IBOutlet weak var myAccountTableView: UITableView!
-    // @IBOutlet weak var accountNameLabel: UILabel!
     
+    // MARK: Variables
     var users : [NSManagedObject] = []
     
     override func viewDidLoad() {
@@ -22,11 +23,12 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
         hideNavigationBar()
     }
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Fetch User Database
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return
+            return
         }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Users")
@@ -38,10 +40,16 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    //
+    // MARK: Number of Table Rows Per Section
+    //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
+    //
+    // MARK: Populate Table Rows According to Row Number
+    //
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = users[0]
         guard let cell = myAccountTableView.dequeueReusableCell(withIdentifier: "nameCellIdentifier", for: indexPath) as? MyAccountTableViewCell else
@@ -97,10 +105,16 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
+    //
+    // MARK: Edit Account
+    //
     @IBAction func editAccount(_ sender: Any) {
         // Edit Account
     }
     
+    //
+    // MARK: Logout. Go Back To Login View When Pressed
+    //
     @IBAction func logout(_ sender: Any) {
         if self.presentingViewController != nil {
             
@@ -108,14 +122,13 @@ class MyAccountViewController: UIViewController, UITableViewDataSource, UITableV
             var style = ToastStyle()
             style.backgroundColor = .white
             style.messageColor = .orange
+            
             self.navigationController!.view.window?.makeToast("Logout Successful!", duration: 2.0, position: .center, style: style)
             
             self.dismiss(animated: false, completion: {
                 self.navigationController!.popToRootViewController(animated: true)
             })
         }
-        else {
-            self.navigationController!.popToRootViewController(animated: true)
-        }
+        self.navigationController!.popToRootViewController(animated: true)
     }
 }

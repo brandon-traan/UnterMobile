@@ -15,17 +15,19 @@ import CoreData
 class SignUpSecondViewController: UIViewController, UITextFieldDelegate,
 UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    // MARK: UI Properties
     @IBOutlet weak var attachmentLabel: UILabel!
     @IBOutlet weak var createAccountButton: UIButton!
     
+    // MARK: Variables
     var avPlayerViewController: AVPlayerViewController!
     var image: UIImage?
     var lastChosenMediaType: String?
     let picker = UIImagePickerController()
-    
     var noAttachment = "No File Attached"
     var hasAttachment = "Create Account"
     
+    // MARK: Variables Passed from Previous View
     var firstname: String!
     var lastname: String!
     var email: String!
@@ -33,13 +35,14 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var password: String!
     var phoneNumber: Int!
     
+    // Toast Message
+    var toastMessage = "Account Created"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createAccountButton.isEnabled = false
         createAccountButton.setTitle(noAttachment, for: .normal)
         attachmentLabel.isHidden = true
-        
-        print(firstname)
     }
     
     //
@@ -61,10 +64,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
             picker.sourceType = sourceType
             
             // Present the picker to the user.
-            
             present(picker, animated: true, completion: nil)
         }
-            // Otherwise display an error message
         else
         {
             let alertController = UIAlertController(title: "Error accessing media", message: "Unsupported media source.",
@@ -75,7 +76,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         }
     }
     
-    
+    //
+    // MARK: Popup Option Menu
+    //
     @IBAction func choosePhotoOption(_ sender: UIButton)
     {
         let alert = UIAlertController(title: "Select Photo From", message: nil, preferredStyle: .actionSheet)
@@ -93,25 +96,25 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func openCamera()
-    {
-        if UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
-        {
+    //
+    // MARK: Open Camera On Device
+    //
+    func openCamera() {
+        if UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             pickMediaFromSource(UIImagePickerControllerSourceType.camera)
-        }
-        else
-        {
+        } else {
             let alert  = UIAlertController(title: "Warning", message: "No camera on device", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
     
-    func openGallary()
-    {
+    //
+    // MARK: Open Gallery On Device
+    //
+    func openGallary() {
         pickMediaFromSource(UIImagePickerControllerSourceType.photoLibrary)
     }
-    
     
     //
     // MARK: - UIImagePickerControllerDelegate
@@ -121,8 +124,6 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     }
     
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        // The info dictionary may contain multiple representations of the image. You want to use the original.
         guard (info[UIImagePickerControllerOriginalImage] as? UIImage) != nil else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
@@ -134,20 +135,25 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         createAccountButton.setTitle(hasAttachment, for: .normal )
     }
     
+    //
+    // MARK: Execute Create User and Go Back to Login View
+    //
     @IBAction func createAccount(_ sender: Any) {
-        // Create User
         createUser()
         
         // Toast Style & Execution
         var style = ToastStyle()
         style.backgroundColor = .white
         style.messageColor = .orange
-        self.navigationController!.view.window?.makeToast("Account Created!", duration: 2.0, position: .center, style: style)
+        self.navigationController!.view.window?.makeToast(toastMessage, duration: 2.0, position: .center, style: style)
         
         // Pop ViewController
         self.navigationController!.popToRootViewController(animated: true)
     }
 
+    //
+    // MARK: Create User Using Core Data
+    //
     func createUser() -> Void {
         let context = getContext()
 

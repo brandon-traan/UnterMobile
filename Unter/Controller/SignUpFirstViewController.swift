@@ -11,6 +11,7 @@ import CoreData
 
 class SignUpFirstViewController: UIViewController {
 
+    // MARK: UI Properties
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
@@ -18,34 +19,32 @@ class SignUpFirstViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
-    
     @IBOutlet var textFields: [UITextField]!
     
+    //MARK: Variables
     var white = UIColor.white
     var red = UIColor.red
-    
     var formIncomplete = "Form Incomplete"
     var formIsComplete = "Continue"
-    
-    
     var user = (firstName: "", lastName: "", country: "", email: "", phoneNumber: 0, password: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         showNavigationBar()
         continueButton.isEnabled = false
         continueButton.setTitle(formIncomplete, for: .normal)
-        
+    
+        // Delete user everytime this view is called
         do {
             deleteExistingUsers()
-            // createTestUser()
         }
-        
         // Register View Controller as Observer
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: Notification.Name.UITextFieldTextDidChange, object: nil)
     }
     
+    //
+    // MARK: Correctly Set Bottom Border to Textfields
+    //
     override func viewDidLayoutSubviews() {
         firstnameTextField.setBottomBorder(underlineColour: white)
         lastnameTextField.setBottomBorder(underlineColour: white)
@@ -60,21 +59,20 @@ class SignUpFirstViewController: UIViewController {
         super.viewWillAppear(animated);
     }
     
+    //
     // MARK: - Notification Handling
-    
+    //
     @objc private func textDidChange(_ notification: Notification) {
         var formIsValid = true
         
         for textField in textFields {
-
-            let valid = validate(textField)
             
+            let valid = validate(textField)
             guard valid else {
                 formIsValid = false
                 break
             }
         }
-        
         if formIsValid {
             continueButton.isEnabled = true
             continueButton.setTitle(formIsComplete, for: .normal)
@@ -84,6 +82,9 @@ class SignUpFirstViewController: UIViewController {
         }
     }
     
+    //
+    // MARK: Check If Textfields Are Empty
+    //
     fileprivate func validate(_ textField: UITextField) -> Bool {
         guard let text = textField.text else {
             return false
@@ -91,8 +92,11 @@ class SignUpFirstViewController: UIViewController {
         return text.count > 0
     }
     
+    
+    //
+    // MARK: Check Textfields Before Segue
+    //
     @IBAction func continueButtonTapped(_ sender: Any) {
-        // user = (firstnameTextField.text!, lastnameTextField.text!, countryTextField.text!, emailTextField.text!, // //phoneTextField.text!, passwordTextField.text!)
         user.firstName = firstnameTextField.text!
         user.lastName = lastnameTextField.text!
         user.country = countryTextField.text!
@@ -103,6 +107,9 @@ class SignUpFirstViewController: UIViewController {
         performSegue(withIdentifier: "signUpP2", sender: self)
     }
     
+    //
+    // MARK: Pass Textfield Data to Next View
+    //
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signUpP2" {
             if let signP2Controller = segue.destination as? SignUpSecondViewController {
@@ -116,8 +123,9 @@ class SignUpFirstViewController: UIViewController {
         }
     }
     
+    //
     // MARK: Delete Data Records
-    
+    //
     func deleteExistingUsers() -> Void {
         let context = getContext()
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
@@ -136,9 +144,11 @@ class SignUpFirstViewController: UIViewController {
         } catch {
             print("Failed Deleting Object")
         }
-        
     }
     
+    //
+    // MARK: Create Test User. Currently not in use.
+    //
     func createTestUser() -> Void {
         let context = getContext()
         
@@ -160,10 +170,11 @@ class SignUpFirstViewController: UIViewController {
         }
     }
     
+    //
     // MARK: Get Context
-    
+    //
     func getContext () -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
-} // end SignUpP1ViewController
+} // End Class
