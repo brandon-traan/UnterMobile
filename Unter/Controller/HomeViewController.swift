@@ -24,11 +24,19 @@ class HomeViewController: UIViewController {
     var loginButtonTitleEmpty = "Empty Email or Password"
     var loginButtonTitleIncorrect = "Incorrect Email or Password"
     var loginButtonTitleDefault = "Sign In"
+    
+    // MARK: NSManagedObject Variables
     var users: [NSManagedObject] = []
+    var vehicles: [Vehicles] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideNavigationBar()
+        
+        do {
+            deleteExistingVehicles()
+            createDummyVehicles()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,21 +80,66 @@ class HomeViewController: UIViewController {
             hidePasswordButton.setImage(UIImage(named: "eyeIconClosed"), for: .normal)
         }
     }
+    
+    //
+    // MARK: Create Dummy Vehciles
+    //
+    func createDummyVehicles() {
+        let context = getContext()
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Vehicles", in: context)
+        let vehicle = Vehicles(entity: entity!, insertInto: context)
+
+        vehicle.make = "Toyota"
+        vehicle.model = "Camry"
+        vehicle.year = "2018"
+        vehicle.location.latitude = -37.80594636283243
+        vehicle.location.longitude? = 144.95888406608893
+        
+        print(vehicle.location?.latitude as Any)
+        
+        do {
+            try context.save()
+            print("Save Created Vehicle")
+            
+        } catch {
+            print("Failed Saving Vehicle")
+        }
+    }
+    
+    //
+    // MARK: Delete Data Records
+    //
+    func deleteExistingVehicles() -> Void {
+        let context = getContext()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vehicles")
+        let result = try? context.fetch(fetchRequest)
+        let vehicles = result as! [Vehicles]
+        
+        for vehicle in vehicles {
+            context.delete(vehicle)
+        }
+        
+        do {
+            try context.save()
+            print("Save Deleted Vehicle!")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        } catch {
+            print("Failed Deleting Vehicle")
+        }
+    }
 
     //
     // MARK: Check Login Details with Device Database
     //
     func checkLoginDetails(email: String, password: String) {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
         // Fetch User Database
-        let managedContext = appDelegate.persistentContainer.viewContext
+        let context = getContext()
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Users")
         do {
-            users = try managedContext.fetch(fetchRequest) as! [Users]
+            users = try context.fetch(fetchRequest) as! [Users]
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -111,6 +164,11 @@ class HomeViewController: UIViewController {
             performSegue(withIdentifier: "loginSuccessSegue", sender: self)
         }
         loginButton.changeTitleTimer(loginButtonTitleIncorrect, loginButtonTitleDefault)
+    }
+    
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
     }
 } // end class
 

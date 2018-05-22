@@ -21,6 +21,6 @@ extension Vehicles {
     @NSManaged public var model: String?
     @NSManaged public var year: String?
     @NSManaged public var booking: Booking?
-    @NSManaged public var location: Location?
+    @NSManaged public var location: Location!
 
 }

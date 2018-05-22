@@ -34,10 +34,6 @@ class SignUpFirstViewController: UIViewController {
         continueButton.isEnabled = false
         continueButton.setTitle(formIncomplete, for: .normal)
     
-        // Delete user everytime this view is called
-        do {
-            deleteExistingUsers()
-        }
         // Register View Controller as Observer
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: Notification.Name.UITextFieldTextDidChange, object: nil)
     }
@@ -120,29 +116,6 @@ class SignUpFirstViewController: UIViewController {
                 signP2Controller.phoneNumber = user.phoneNumber
                 signP2Controller.password = user.password
             }
-        }
-    }
-    
-    //
-    // MARK: Delete Data Records
-    //
-    func deleteExistingUsers() -> Void {
-        let context = getContext()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
-        let result = try? context.fetch(fetchRequest)
-        let users = result as! [Users]
-        
-        for user in users {
-            context.delete(user)
-        }
-        
-        do {
-            try context.save()
-            print("Save Deleted Object!")
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-        } catch {
-            print("Failed Deleting Object")
         }
     }
     

@@ -43,6 +43,11 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         createAccountButton.isEnabled = false
         createAccountButton.setTitle(noAttachment, for: .normal)
         attachmentLabel.isHidden = true
+        
+        // Delete user everytime this view is called
+        do {
+            deleteExistingUsers()
+        }
     }
     
     //
@@ -175,9 +180,31 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         }
     }
     
+    //
+    // MARK: Delete Data Records
+    //
+    func deleteExistingUsers() -> Void {
+        let context = getContext()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        let result = try? context.fetch(fetchRequest)
+        let users = result as! [Users]
+        
+        for user in users {
+            context.delete(user)
+        }
+        
+        do {
+            try context.save()
+            print("Save Deleted Object!")
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        } catch {
+            print("Failed Deleting Object")
+        }
+    }
+    
     func getContext () -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
-
 }
