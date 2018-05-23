@@ -605,6 +605,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="bookCar:" destination="5cf-HP-QQJ" eventType="touchUpInside" id="aeD-eo-v95"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMz-wr-3UB">
                                 <rect key="frame" x="30" y="586.66666666666663" width="315" height="40"/>
@@ -944,7 +947,7 @@
         <!--Bookings-->
         <scene sceneID="eOq-vf-QY4">
             <objects>
-                <tableViewController id="xoi-3j-RK1" customClass="I" sceneMemberID="viewController">
+                <tableViewController id="xoi-3j-RK1" customClass="HistoryTableViewController" customModule="Unter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="feD-VR-tdK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
