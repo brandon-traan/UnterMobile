@@ -10,12 +10,12 @@ import UIKit
 import CoreData
 import GoogleMaps
 
-class BookViewController: UIViewController {
+class BookViewController: UIViewController, GMSMapViewDelegate {
 
     // MARK: UI Properties
     @IBOutlet weak var mapView: GMSMapView!
     
-    // var markers = ()
+    var marker: GMSMarker?
     var fetchedVehicles : [Vehicles] = []
     
     private let locationManager = CLLocationManager()
@@ -31,26 +31,44 @@ class BookViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
+        mapView.delegate = self
         
         // Long & Lat RMIT Building 56 Coordinates
         // Longitude: 144.96554013
         // Latitude: -37.80530242
-        
-
+        for vehicle in fetchedVehicles {
+            print(fetchedVehicles.count)
+            print(vehicle.make!)
+            print(vehicle.location!.latitude)
+            print(vehicle.location!.longitude)
+            
+            let position = CLLocationCoordinate2D(latitude: vehicle.location!.latitude, longitude: vehicle.location!.longitude)
+            
+            let marker = GMSMarker(position: position)
+            marker.title = vehicle.make! + " " + vehicle.model!
+            marker.snippet = "hello world. Example of a long description. Can't stop me now. Will this fit on an iPhone screen?"
+            marker.map = mapView
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-
-        
-//        for vehicle in vehicles {
-//            longitude.append((vehicle.location?.longitude)!)
-//            latitude.append((vehicle.location?.latitude)!)
-//        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Show Booking Info" {
+            if let destination = segue.destination as? BookInfoViewController {
+                // Pass Variables
+            }
+        }
+    }
+    
+     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        performSegue(withIdentifier: "Show Booking Info", sender: self)
+        return true
     }
     
     func getContext () -> NSManagedObjectContext {
@@ -71,26 +89,14 @@ extension BookViewController: CLLocationManagerDelegate  {
         locationManager.startUpdatingLocation()
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
-        
-        for vehicle in fetchedVehicles {
-            print(fetchedVehicles.count)
-            print(vehicle.make!)
-            print(vehicle.location!.latitude)
-            print(vehicle.location!.longitude)
-            
-            let position = CLLocationCoordinate2D(latitude: -37.805620, longitude: 144.966143)
-
-            let marker = GMSMarker(position: position)
-            marker.title = vehicle.make! + " " + vehicle.model!
-            marker.map = mapView
-        }
+    
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {
             return
         }
-        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 50, bearing: 0, viewingAngle: 0)
         locationManager.stopUpdatingLocation()
     }
 }
