@@ -17,6 +17,7 @@ class BookInfoViewController: UIViewController {
     @IBOutlet weak var carYearLabel: UILabel!
     @IBOutlet weak var bookButton: UIButton!
     @IBOutlet weak var carImageViewAspectRatio: NSLayoutConstraint!
+    @IBOutlet weak var cancelbutton: UIButton!
     
     // MARK: Variables
     var bookingMessage = "Successfully Booked"
@@ -35,9 +36,9 @@ class BookInfoViewController: UIViewController {
         
         self.view.makeToastActivity(.center)
         
-//        var style = ToastStyle()
-//        style.backgroundColor = .white
-//        style.messageColor = .orange
+        var style = ToastStyle()
+        style.backgroundColor = .white
+        style.messageColor = .orange
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
             if totalTime != 0 {
@@ -48,7 +49,7 @@ class BookInfoViewController: UIViewController {
                 self.view.makeToast(self.bookingMessage, duration: 2.0, position: .center)
                 self.bookButton.isEnabled = false
                 self.bookButton.setTitle(self.bookingButtonTitle, for: .normal)
-                
+                self.cancelbutton.setTitle("Go Back", for: .normal)
                 t.invalidate()
             }
         })

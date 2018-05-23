@@ -645,6 +645,7 @@
                     </view>
                     <connections>
                         <outlet property="bookButton" destination="Udg-JL-WI5" id="h5U-Lp-byj"/>
+                        <outlet property="cancelbutton" destination="cMz-wr-3UB" id="PUC-aG-Fk6"/>
                         <outlet property="carImageView" destination="GUH-qF-BLa" id="hl2-aL-cmn"/>
                         <outlet property="carImageViewAspectRatio" destination="DiB-5n-UFS" id="jHi-aT-hGh"/>
                         <outlet property="carMakeLabel" destination="hh3-Qs-njA" id="f6w-xS-MaX"/>
