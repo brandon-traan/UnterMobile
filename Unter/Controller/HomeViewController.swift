@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     
     // MARK: NSManagedObject Variables
     var users: [NSManagedObject] = []
-    var vehicles: [Vehicles] = []
+    // var vehicles: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,17 +93,18 @@ class HomeViewController: UIViewController {
         vehicle.make = "Toyota"
         vehicle.model = "Camry"
         vehicle.year = "2018"
-        vehicle.location.latitude = -37.80594636283243
-        vehicle.location.longitude? = 144.95888406608893
         
-        print(vehicle.location?.latitude as Any)
+        let location = Location(context: context)
+        location.latitude = -37.805620
+        location.longitude = 144.966143
+        vehicle.location = location
         
         do {
             try context.save()
-            print("Save Created Vehicle")
+            print("Created Vehicle")
             
         } catch {
-            print("Failed Saving Vehicle")
+            print("Failed Creating Vehicle")
         }
     }
     
@@ -122,7 +123,7 @@ class HomeViewController: UIViewController {
         
         do {
             try context.save()
-            print("Save Deleted Vehicle!")
+            print("Deleted Vehicle!")
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         } catch {

@@ -2,7 +2,7 @@
 //  Vehicles+CoreDataProperties.swift
 //  Unter
 //
-//  Created by Brandon Tran on 22/5/18.
+//  Created by Brandon Tran on 23/5/18.
 //  Copyright © 2018 Brandon Tran. All rights reserved.
 //
 //
@@ -21,6 +21,6 @@ extension Vehicles {
     @NSManaged public var model: String?
     @NSManaged public var year: String?
     @NSManaged public var booking: Booking?
-    @NSManaged public var location: Location!
+    @NSManaged public var location: Location?
 
 }

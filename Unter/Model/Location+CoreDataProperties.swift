@@ -2,7 +2,7 @@
 //  Location+CoreDataProperties.swift
 //  Unter
 //
-//  Created by Brandon Tran on 22/5/18.
+//  Created by Brandon Tran on 23/5/18.
 //  Copyright © 2018 Brandon Tran. All rights reserved.
 //
 //
@@ -19,6 +19,6 @@ extension Location {
 
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
-    @NSManaged public var location: Vehicles!
+    @NSManaged public var location: Vehicles?
 
 }
